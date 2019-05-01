@@ -10,6 +10,15 @@ language linter implemented in Python.
 
 <!-- toc -->
 
+- [Getting the Image](#getting-the-image)
+- [Usage](#usage)
+- [Issues](#issues)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## Getting the Image
 
 Time image is hosted on Docker Hub and can be pulled down with:
