@@ -19,6 +19,6 @@ docker_builder:
     DOCKER_PASSWORD: ENCRYPTED[de7ac9dd97e8261d022a1fe0288ef9b5504099b59e75de2be57a19d29201c562060a888db924e2b852695ee4e64006b3]
   build_script: ./build.sh "$IMAGE_NAME" "$CIRRUS_TAG" latest
   login_script: >
-    echo "$DOCKER_PASSWORD"
+    echo "$DOCKER_PASSWORD" \
       | docker login --username "$DOCKER_USERNAME" --password-stdin
   push_script: docker push "$IMAGE_NAME:$CIRRUS_TAG"
