@@ -15,8 +15,8 @@ docker_builder:
     - check
   env:
     IMAGE_NAME: fnichol/vint
-    DOCKER_USERNAME: user
-    DOCKER_PASSWORD: pass
+    DOCKER_USERNAME: ENCRYPTED[87502d3f2acc6ef65aadfa9a276866c48236bda445c531c1875571029cb30c01562e6bb739f9466fee74164d71dcde5e]
+    DOCKER_PASSWORD: ENCRYPTED[de7ac9dd97e8261d022a1fe0288ef9b5504099b59e75de2be57a19d29201c562060a888db924e2b852695ee4e64006b3]
   build_script: ./build.sh "$IMAGE_NAME" "$CIRRUS_TAG" latest
   login_script: >
     cat "$DOCKER_PASSWORD"
