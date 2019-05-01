@@ -1,0 +1,16 @@
+check_task:
+  check_script: make check
+
+docker_builder:
+  onlf_if: $CIRRUS_TAG != ''
+  depends_on:
+    - check
+  env:
+    IMAGE_NAME: fnichol/vint
+    DOCKER_USERNAME: user
+    DOCKER_PASSWORD: pass
+  build_script: ./build.sh "$IMAGE_NAME" "$CIRRUS_TAG" latest
+  login_script: >
+    cat "$DOCKER_PASSWORD"
+      | docker login --username "$DOCKER_USERNAME" --password-stdin
+  push_script: docker push "$IMAGE_NAME:$CIRRUS_TAG"
