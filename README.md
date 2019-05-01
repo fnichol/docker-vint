@@ -66,7 +66,7 @@ To lint Vin scripts in your current directory, mount your current directory into
 the container as read-only:
 
 ```console
-> docker run --rm -ti -v "$(pwd)":/src:ro -w /src fnichol/vint --color .vimrc
+$ docker run --rm -ti -v "$(pwd)":/src:ro -w /src fnichol/vint --color .vimrc
 .vimrc:7:1: Do not use nocompatible which has unexpected effects (see :help nocompatible)
 ```
 
