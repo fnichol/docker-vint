@@ -1,12 +1,6 @@
 check_task:
-  # This implementation is temporary, until a shell checking image is ready
   container:
-    image: greyltc/archlinux:latest
-  setup_script:
-    - pacman -Syyu --noconfirm
-    - pacman -S --noconfirm make shellcheck shfmt
-    - curl -SfL https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 -o /usr/local/bin/hadolint
-    - chmod 0755 /usr/local/bin/hadolint
+    image: fnichol/check-shell:latest
   check_script: make check
 
 docker_builder:
