@@ -2,7 +2,7 @@ check_task:
   check_script: make check
 
 docker_builder:
-  onlf_if: $CIRRUS_TAG != ''
+  only_if: $CIRRUS_TAG != ''
   depends_on:
     - check
   env:
