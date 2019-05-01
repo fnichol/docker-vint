@@ -21,7 +21,7 @@ language linter implemented in Python.
 
 ## Getting the Image
 
-Time image is hosted on Docker Hub and can be pulled down with:
+The image is hosted on Docker Hub and can be pulled down with:
 
 ```console
 $ docker pull fnichol/vint
