@@ -9,7 +9,7 @@ include vendor/mk/release.mk
 
 build: ## Builds Docker image
 	@echo "--- $@"
-	./build.sh $(IMAGE) $${CIRRUS_TAG:-$${TAG:-dev}} latest
+	./build.sh $(IMAGE) $(VERSION) latest
 .PHONY: build
 
 clean:
