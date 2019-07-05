@@ -9,7 +9,7 @@ include vendor/mk/release.mk
 
 build: ## Builds Docker image
 	@echo "--- $@"
-	./build.sh $(IMAGE) $(VERSION) latest
+	./build.sh $(IMAGE) $(shell cat VERSION.txt) latest
 .PHONY: build
 
 clean:

@@ -1,10 +1,9 @@
-VERSION := $(shell cat VERSION.txt)
 BUMP_VERSION_SOURCES ?= README.md
 
 bump-version: ## Set a new version for the project. Set VERSION=x.y.z
 	@echo "--- $@"
 	@if [ -z "$(strip $(VERSION))" ]; then \
-		echo "xxx usage: make bump-version VERSION=1.2.3" >&2; \
+		echo "xxx usage: make $@ VERSION=1.2.3" >&2; \
 		echo "xxx Missing required value: VERSION" >&2; \
 		exit 1; \
 	fi
@@ -16,7 +15,7 @@ bump-version: ## Set a new version for the project. Set VERSION=x.y.z
 	@echo "  - Setting version to '$(VERSION)' in VERSION.txt"
 	echo "$(VERSION)" > VERSION.txt
 	@echo "  - Preparing release commit"
-	git add $(BUMP_VERSION_SOURCES)
+	git add $(BUMP_VERSION_SOURCES) VERSION.txt
 	git commit --signoff --message "[release] Update version to $(VERSION)"
 	@echo
 	@echo "To complete the release for $(VERSION), run: \`make tag\`"
